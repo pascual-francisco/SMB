@@ -41,6 +41,8 @@ Mario::Mario(float x, float y)
 
 	brain.push(marioIdle);
 	brain.top()->enter();
+
+
 }
 
 Mario::~Mario()

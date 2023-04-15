@@ -1305,7 +1305,7 @@
 1602902040 d:\code blocks\gamlib 6.0\texture.h
 	"stdafx.h"
 
-1604941638 d:\code blocks\gamlib 6.0\texturemanager.h
+1681257783 d:\code blocks\gamlib 6.0\texturemanager.h
 	"stdafx.h"
 
 1601424352 d:\code blocks\gamlib 6.0\transformation.h
@@ -1382,16 +1382,16 @@
 1604786315 d:\code blocks\gamlib 6.0\soundmanager.h
 	"stdafx.h"
 
-1680875862 d:\code blocks\gamlib 6.0\camera.h
+1681362427 d:\code blocks\gamlib 6.0\camera.h
 	"Stdafx.h"
 
-1612728817 d:\code blocks\gamlib 6.0\scene.h
+1681270485 d:\code blocks\gamlib 6.0\scene.h
 	"stdafx.h"
 
-1680878114 d:\code blocks\gamlib 6.0\renderer.h
+1680915383 d:\code blocks\gamlib 6.0\renderer.h
 	"stdafx.h"
 
-1680875935 d:\code blocks\gamlib 6.0\game.h
+1681180480 d:\code blocks\gamlib 6.0\game.h
 	"stdafx.h"
 
 1680887384 d:\code blocks\gamlib 6.0\eventmanager.h

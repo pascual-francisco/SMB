@@ -7,7 +7,7 @@
 class World11 : public Scene
 {
 public:
-	World11(GLuint id, bool act, SDL_FRect viewport, GLuint program);
+	World11(GLuint id, GLuint program);
 	~World11();
 
 	void	initObjects();

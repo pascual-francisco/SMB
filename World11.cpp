@@ -1,8 +1,9 @@
 #pragma once
 #include "stdafx.h"
 
-World11::World11(GLuint id, bool act, SDL_FRect vie, GLuint pro) :Scene(id, act, vie, pro)
+World11::World11(GLuint id, GLuint pro):Scene()
 {
+	programID = pro;
 	initObjects();
 	initBackground();
 	initForeground();

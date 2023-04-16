@@ -27,32 +27,25 @@ void SuperMarioBros::initScenes()
 void SuperMarioBros::initTextures()
 {
 	ptrTextureManager = new TextureManager();
-	ptrTextureManager->initTexture(SKY00001, "Assets/Textures/l0_Sky_1", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(SKY00003, "Assets/Textures/l0_Sky_3", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(SKY00002, "Assets/Textures/l0_Sky_2", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(SKY00004, "Assets/Textures/l0_Sky_4", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(CLOUD001, "Assets/Textures/l0_Cloud_", 5, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(GROUND01, "Assets/Textures/ground_0", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(GROUND02, "Assets/Textures/ground_1", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(GROUND03, "Assets/Textures/ground_2", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(GROUND04, "Assets/Textures/ground_3", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(BLOCK001, "Assets/Textures/l0_Block_1", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(BLOCK002, "Assets/Textures/l0_Block_2", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(BLOCK003, "Assets/Textures/l0_Block_3", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(BLOCK004, "Assets/Textures/l0_Block_4", 1, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(MARIO, "Assets/Textures/l0_Mario_", 14, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(SUPER_MARIO, "Assets/Textures/l0_SuperMario_", 15, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(GOOMBA, "Assets/Textures/l0_Goomba_", 3, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(TROOPA, "Assets/Textures/l0_Troopa_", 6, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PIRANHA, "Assets/Textures/l0_Piranha_", 8, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTileSet(QUESTIONSET1, "Assets/Textures/l0_QuestionSet1", 16, 16, 5, 5, 0, 0, GL_TEXTURE_2D_ARRAY);
 
 }
 
 void SuperMarioBros::initSounds()
 {
 	ptrSoundManager = new SoundManager();
-	ptrSoundManager->initBGM();
+	ptrSoundManager->initBGM(0, "Assets/Audio/BGM/01 - Super Mario Bros.mp3");
+	ptrSoundManager->initBGM(1, "Assets/Audio/BGM/02 - Invincibility Star.mp3");
+	ptrSoundManager->initBGM(2, "Assets/Audio/BGM/03 - Hurry - Super Mario Bros.mp3");
+	ptrSoundManager->initBGM(3, "Assets/Audio/BGM/04 - Area Clear.mp3");
+	ptrSoundManager->initBGM(4, "Assets/Audio/BGM/05 - Warp Pipe.mp3");
+	ptrSoundManager->initBGM(5, "Assets/Audio/BGM/06 - Underground.mp3");
+	ptrSoundManager->initBGM(6, "Assets/Audio/BGM/08 - Water World.mp3");
+	ptrSoundManager->initBGM(7, "Assets/Audio/BGM/09 - Hurry - Water World.mp3");
+	ptrSoundManager->initBGM(8, "Assets/Audio/BGM/11 - Hurry - Castle.mp3");
+	ptrSoundManager->initBGM(9, "Assets/Audio/BGM/12 - World Clear.mp3");
+	ptrSoundManager->initBGM(10, "Assets/Audio/BGM/13 - Ending.mp3");
+	ptrSoundManager->initBGM(11, "Assets/Audio/BGM/13 - Ending.mp3");
 }
 
 void SuperMarioBros::initUniforms()

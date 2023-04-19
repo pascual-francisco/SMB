@@ -27,7 +27,7 @@ void World11::initObjects()
 
 void World11::initBackground()
 {
-	ptrBackground = new TileMapManager(5 * 240, 240, WORLD11_MAP,  viewPort.w, viewPort.h, 16, 16, programID, GL_TRIANGLES);
+	ptrBackground = new TileMapManager(5 * 240, 240, WORLD11MAPDATA,  viewPort.w, viewPort.h, 16, 16, 1, programID, GL_TRIANGLES);
 	ptrBackground->loadPage(0, 0, 0, 0);
 	ptrBackground->loadPage(16, 0, 1, 1);
 }

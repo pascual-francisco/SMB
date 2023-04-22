@@ -25,5 +25,5 @@ void main()
     vec4 vRotateY = vec4(cos(vRot.x) + sin(vRot.z), vPos.y, -sin(vRot.x) + cos(vRot.z), 1.0);
     vec4 vRotateZ = vec4(cos(vPos.x) - sin(vRot.y), sin(vRot.x) + cos(vRot.y), vPos.z, 1.0);
 
-    gl_Position = vScale * vTranslate * vRotateX * vRotateY * vRotateZ;
+    gl_Position = vec4(vPos, 1.0);
 }

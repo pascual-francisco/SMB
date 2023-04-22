@@ -148,7 +148,7 @@ void Mario::MarioWalk::enter()
 	mario->brain.pop();
 	mario->brain.pop();
 	mario->brain.push(mario->marioWalk);
-//	mario->sprite[0]->setAnimation(1, 3, 1, 3.0f, Sprite::AnimationStates::LOOP_FORWARD);
+	mario->sprite[0]->ptrAnimation = new Animation(1, 3, 1, 3.0f, Animation::LOOP_FORWARD);
 }
 
 void Mario::MarioWalk::update()

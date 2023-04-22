@@ -10,7 +10,8 @@ out vec4 vFragColor;
 
 void main()
 {
-    vFragColor = texture(fSamplers, vTexture.stp) * vColor;
+    //vFragColor = texture(fSamplers, vTexture.stp) * vColor;
+    vFragColor = vec4(1,0,0,1);
 }
 
 

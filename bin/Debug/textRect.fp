@@ -1,8 +1,18 @@
-version 330
+#version 410
 
-void main(void)
+//fSamplers
+
+uniform sampler2DArray fSamplers;
+in vec4 vColor;
+in vec4 vTexture;
+
+out vec4 vFragColor;
+
+void main()
 {
-    gl_FragColor = vec4(1.0,1.0,1.0,1.0);
+    //vFragColor = texture(fSamplers, vTexture.stp) * vColor;
+    vFragColor =  vec4(0.0, 1.0, 0.0, 1.0);
+
 }
 
 

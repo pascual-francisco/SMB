@@ -2,7 +2,7 @@
 1681185669 source:d:\code blocks\smb\main.cpp
 	"stdafx.h"
 
-1681591179 source:d:\code blocks\smb\goomba.cpp
+1682138977 source:d:\code blocks\smb\goomba.cpp
 	"stdafx.h"
 
 1680904259 d:\code blocks\smb\goomba.h
@@ -1208,7 +1208,7 @@
 1609618325 d:\code blocks\gamlib 6.0\gamlib.h
 	"stdafx.h"
 
-1680901067 d:\code blocks\gamlib 6.0\stdafx.h
+1682131609 d:\code blocks\gamlib 6.0\stdafx.h
 	<windows.h>
 	<list>
 	<map>
@@ -1246,7 +1246,7 @@
 	"Mechanics.h"
 	"FSMState.h"
 	"GraphicElement.h"
-	"HitBox.h"
+	"Animation.h"
 	"Sprite.h"
 	"GameObject.h"
 	"Entity.h"
@@ -1317,13 +1317,13 @@
 1610209936 d:\code blocks\gamlib 6.0\fsmstate.h
 	"stdafx.h"
 
-1603158763 d:\code blocks\gamlib 6.0\graphicelement.h
+1682138637 d:\code blocks\gamlib 6.0\graphicelement.h
 	"stdafx.h"
 
 1632273352 d:\code blocks\gamlib 6.0\hitbox.h
 	"stdafx.h"
 
-1681870337 d:\code blocks\gamlib 6.0\sprite.h
+1682128720 d:\code blocks\gamlib 6.0\sprite.h
 	"stdafx.h"
 
 1611450551 d:\code blocks\gamlib 6.0\gameobject.h
@@ -1373,10 +1373,10 @@
 1602981411 d:\code blocks\gamlib 6.0\indexbuffer.h
 	"stdafx.h"
 
-1681876646 d:\code blocks\gamlib 6.0\tilemapmanager.h
+1682131635 d:\code blocks\gamlib 6.0\tilemapmanager.h
 	"stdafx.h"
 
-1611615486 d:\code blocks\gamlib 6.0\objectmanager.h
+1682122289 d:\code blocks\gamlib 6.0\objectmanager.h
 	"stdafx.h"
 
 1604786315 d:\code blocks\gamlib 6.0\soundmanager.h
@@ -1409,7 +1409,7 @@
 1609697132 d:\code blocks\smb\piranha.h
 	"stdafx.h"
 
-1681877114 d:\code blocks\smb\world11map.h
+1681878966 d:\code blocks\smb\world11map.h
 	"stdafx.h"
 
 1681615810 d:\code blocks\smb\world11.h
@@ -1418,19 +1418,19 @@
 1609536511 d:\code blocks\smb\supermariobros.h
 	"stdafx.h"
 
-1681525845 source:d:\code blocks\smb\mario.cpp
+1682138977 source:d:\code blocks\smb\mario.cpp
 	"stdafx.h"
 
-1680904309 source:d:\code blocks\smb\piranha.cpp
+1682139034 source:d:\code blocks\smb\piranha.cpp
 	"stdafx.h"
 
-1681616726 source:d:\code blocks\smb\super mario bros.cpp
+1682139025 source:d:\code blocks\smb\super mario bros.cpp
 	"stdafx.h"
 
-1680904294 source:d:\code blocks\smb\troopa.cpp
+1682139040 source:d:\code blocks\smb\troopa.cpp
 	"stdafx.h"
 
-1681876868 source:d:\code blocks\smb\world11.cpp
+1682140058 source:d:\code blocks\smb\world11.cpp
 	"stdafx.h"
 
 1678146984 d:\sdl2-2.26.4\include\sdl.h
@@ -2958,4 +2958,10 @@
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
+
+1602636684 d:\code blocks\gamlib 6.0\tile.h
+	"stdafx.h"
+
+1682048101 d:\code blocks\gamlib 6.0\animation.h
+	"Stdafx.h"
 

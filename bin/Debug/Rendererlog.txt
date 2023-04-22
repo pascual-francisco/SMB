@@ -1,8 +1,7 @@
 -------------------------------------------------------------------------------------------------------------------------------------
-Renderer Log: Sat Apr 22 01:08:50 2023
+Renderer Log: Wed Apr 19 00:24:58 2023
 SDL initialized no error
 SDL_Image initialized no error
 OpenGL context created no error
 OpenGL initialized version: 4.6.0 NVIDIA 388.13
 GLEW initialized no error
-Max Texture Units = 32

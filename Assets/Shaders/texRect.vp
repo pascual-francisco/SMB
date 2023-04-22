@@ -1,14 +1,7 @@
-/*
-	DATA BUFFER:
-	Entity 0
-		Sprite 0 [XYZW-STPQ-RGBA-TTT-SSS-RRR] , [XYZW-STRQ-RGBA-TTT-SSS-RRR] , [XYZW-STRQ-RGBA-TTT-SSS-RRR] , [XYZW-STRQ-RGBA-TTT-SSS-RRR] = 21 Floats
-		21 Float * 4 Vertices = 84 Floats
-		1 Quad = 84 Floats
-*/
 
 #version 410
 
-layout (location = 0) in vec4 vPos;
+layout (location = 0) in vec3 vPos;
 layout (location = 1) in vec4 vTex;
 layout (location = 2) in vec4 vCol;
 layout (location = 3) in vec3 vTra;
@@ -32,6 +25,5 @@ void main()
     vec4 vRotateY = vec4(cos(vRot.x) + sin(vRot.z), vPos.y, -sin(vRot.x) + cos(vRot.z), 1.0);
     vec4 vRotateZ = vec4(cos(vPos.x) - sin(vRot.y), sin(vRot.x) + cos(vRot.y), vPos.z, 1.0);
 
-    //gl_Position = vScale * vTranslate * vRotateX * vRotateY * vRotateZ;
-    gl_Position = vView * vProjection  * vec4(1.0, 1.0, 1.0, 1.0);
+    gl_Position = vScale * vTranslate * vRotateX * vRotateY * vRotateZ;
 }

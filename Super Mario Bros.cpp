@@ -20,8 +20,8 @@ SuperMarioBros::~SuperMarioBros()
 
 void SuperMarioBros::initScenes()
 {
-	//scenes.push_back(new World11(INTRO, ptrRenderer->ptrShaders[0]->programID));
-	//scenes.push_back(new World11(WORLD11, ptrRenderer->ptrShaders[0]->programID));
+	scenes.push_back(new World11(INTRO, ptrRenderer->ptrShaders[0]->programID));
+	scenes.push_back(new World11(WORLD11, ptrRenderer->ptrShaders[0]->programID));
 }
 
 void SuperMarioBros::initTextures()
@@ -139,13 +139,13 @@ void SuperMarioBros::checkEvents()
 				break;
 
 			case SDLK_x:
-				scenes[actualScene]->ptrObjects->entitiesArray[0]->sprite[0]->textureID = 10;
+				scenes[actualScene]->ptrObjects->entitiesArray[0]->sprite[0]->texturePalette = 10;
 
 
 				break;
 
 			case SDLK_c:
-				scenes[actualScene]->ptrObjects->entitiesArray[0]->sprite[0]->textureID = 14;
+				scenes[actualScene]->ptrObjects->entitiesArray[0]->sprite[0]->texturePalette = 14;
 
 				break;
 

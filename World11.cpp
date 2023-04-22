@@ -40,12 +40,12 @@ void World11::initForeground()
 void World11::updateObjects()
 {
 
-	for (int i = 0; i < 4; i++)
-	{
-		ptrObjects->entitiesArray[i]->mechanics.position.x += ptrBackground->speedX;
-		ptrObjects->entitiesArray[i]->mechanics.position.y += ptrBackground->speedY;
-		*ptrObjects->entitiesArray[0]->sprite[0] * *ptrObjects->entitiesArray[1]->sprite[0];
-	}
+//	for (int i = 0; i < 4; i++)
+//	{
+//		ptrObjects->entitiesArray[i]->mechanics.position.x += ptrBackground->speedX;
+//		ptrObjects->entitiesArray[i]->mechanics.position.y += ptrBackground->speedY;
+//		*ptrObjects->entitiesArray[0]->sprite[0] * *ptrObjects->entitiesArray[1]->sprite[0];
+//	}
 
 }
 

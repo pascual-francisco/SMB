@@ -23,7 +23,6 @@ Mario::Mario(float x, float y)
 	fireButton = false;
 
 	sprite.push_back(new Sprite(MARIO));
-	sprite[0]->hitBox.push_back(new HitBox());
 
 	sprite[0]->transformation.pivot.x = 7.0f;
 	mechanics.position.x = x;
@@ -57,11 +56,7 @@ Mario::~Mario()
 void Mario::update()
 {
 	sprite[0]->transformation.rotate.y = direction;
-	sprite[0]->hitBox[0]->box.x = sprite[0]->transformation.translate.x - 8.0f;
-	sprite[0]->hitBox[0]->box.y = sprite[0]->transformation.translate.y - 0.0f;
-	sprite[0]->hitBox[0]->box.w = 16.0f;
-	sprite[0]->hitBox[0]->box.h = 16.0f;
-	//sprite[0]->hitBox[0]->print();
+
 
 	if (!leftButton && !rightButton)
 		mechanics.speed.x = 0.0f;
@@ -122,7 +117,7 @@ void Mario::MarioIdle::enter()
 		mario->brain.push(mario->marioIdle);
 	}
 
-	mario->sprite[0]->setAnimation(0, 0, 0, 0, 0);
+
 }
 
 void Mario::MarioIdle::update()
@@ -153,7 +148,7 @@ void Mario::MarioWalk::enter()
 	mario->brain.pop();
 	mario->brain.pop();
 	mario->brain.push(mario->marioWalk);
-	mario->sprite[0]->setAnimation(1, 3, 1, 3.0f, Sprite::AnimationStates::LOOP_FORWARD);
+//	mario->sprite[0]->setAnimation(1, 3, 1, 3.0f, Sprite::AnimationStates::LOOP_FORWARD);
 }
 
 void Mario::MarioWalk::update()
@@ -183,7 +178,7 @@ void Mario::MarioJump::enter()
 {
 	mario->brain.pop();
 	mario->brain.push(mario->marioJump);
-	mario->sprite[0]->setAnimation(0, 14, 5, 1.0f, Sprite::AnimationStates::PAUSE);
+//	mario->sprite[0]->setAnimation(0, 14, 5, 1.0f, Sprite::AnimationStates::PAUSE);
 }
 
 void Mario::MarioJump::update()

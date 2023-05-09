@@ -1,10 +1,9 @@
-#pragma once
 #include "stdafx.h"
 
 #ifndef GOOMBA_H
 #define GOOMBA_H
 
-class Goomba :public Entity
+class Goomba: public Entity
 {
 	public:
 

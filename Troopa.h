@@ -1,4 +1,4 @@
-#pragma once
+
 #include "stdafx.h"
 
 #ifndef TROOPA_H

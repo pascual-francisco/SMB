@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 #ifndef WORLD11_H

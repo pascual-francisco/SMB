@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 #ifndef SUPERMARIOBROS_H
@@ -6,8 +5,8 @@
 
 class SuperMarioBros: public Game
 {
-	public:		
-	SuperMarioBros(bool mode, string file, GLuint x, GLuint y, GLuint w, GLuint h);
+	public:
+	SuperMarioBros(bool mode, string file, GLuint sh, GLuint x, GLuint y, GLuint w, GLuint h);
 	~SuperMarioBros();
 
 	void initScenes();
@@ -20,7 +19,7 @@ class SuperMarioBros: public Game
 	void updateUniforms();
 	void updateTextures();
 	void updateSounds();
-	void updateBuffers();	
+	void updateBuffers();
 	void update();
 	void checkEvents();
 };

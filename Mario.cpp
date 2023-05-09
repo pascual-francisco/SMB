@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 Mario::Mario(float x, float y)
@@ -22,7 +21,7 @@ Mario::Mario(float x, float y)
 	jumpButton = false;
 	fireButton = false;
 
-	sprite.push_back(new Sprite(MARIO));
+	sprite.push_back(new Sprite(PALETTE_1));
 
 	sprite[0]->transformation.pivot.x = 7.0f;
 	mechanics.position.x = x;
@@ -87,8 +86,6 @@ void Mario::update()
 
 	if (downButton)
 		mechanics.speed.y = -1.0f;
-
-	//sprite[0]->hitBox[0]->print();
 
 	brain.top()->update();
 }
@@ -178,7 +175,7 @@ void Mario::MarioJump::enter()
 {
 	mario->brain.pop();
 	mario->brain.push(mario->marioJump);
-//	mario->sprite[0]->setAnimation(0, 14, 5, 1.0f, Sprite::AnimationStates::PAUSE);
+
 }
 
 void Mario::MarioJump::update()

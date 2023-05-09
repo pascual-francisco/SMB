@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 #ifndef MARIO_H
@@ -7,7 +6,7 @@
 class Mario :public Entity
 {
 	public:
-	
+
 	#ifndef MARIOIDLE_H
 	#define MARIOIDLE_H
 	class MarioIdle : public FSMState
@@ -103,14 +102,14 @@ class Mario :public Entity
 		void update();
 	};
 #endif // !MARIOKO_H
-	
+
 	MarioIdle *marioIdle;
-	MarioWalk *marioWalk;	
+	MarioWalk *marioWalk;
 	MarioJump *marioJump;
 	MarioShoot *marioShoot;
 	MarioHit *marioHit;
 	MarioKO *marioKO;
-	
+
 	bool leftButton;
 	bool rightButton;
 	bool upButton;
@@ -118,7 +117,7 @@ class Mario :public Entity
 	bool fireButton;
 	bool jumpButton;
 
-	
+
 	Mario(float x, float y);
 	~Mario();
 

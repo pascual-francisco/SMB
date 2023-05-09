@@ -1,5 +1,4 @@
-
-#version 410
+#version 440
 
 layout (location = 0) in vec3 vPos;
 layout (location = 1) in vec4 vTex;
@@ -8,8 +7,8 @@ layout (location = 3) in vec3 vTra;
 layout (location = 4) in vec3 vSca;
 layout (location = 5) in vec3 vRot;
 
-in mat4 vProjection;
-in mat4 vView;
+uniform in mat4 vProjection;
+uniform in mat4 vView;
 
 out vec4 vColor;
 out vec4 vTexture;
@@ -19,11 +18,13 @@ void main()
     vColor = vCol;
     vTexture = vTex;
 
-    vec4 vScale = vec4(vSca.x * vPos.x, vSca.y * vPos.y, vSca.z * vPos.z, 1.0);
+   vec4 vScale = vec4(vSca.x * vPos.x, vSca.y * vPos.y, vSca.z * vPos.z, 1.0);
     vec4 vTranslate = vec4(vTra.x + vPos.x, vTra.y + vPos.y, vTra.z + vPos.z, 1.0);
     vec4 vRotateX = vec4(vPos.x, cos(vRot.y) - sin(vRot.z), sin(vRot.y) + cos(vRot.z), 1.0);
     vec4 vRotateY = vec4(cos(vRot.x) + sin(vRot.z), vPos.y, -sin(vRot.x) + cos(vRot.z), 1.0);
     vec4 vRotateZ = vec4(cos(vPos.x) - sin(vRot.y), sin(vRot.x) + cos(vRot.y), vPos.z, 1.0);
 
-    gl_Position = vec4(vPos, 1.0);
+
+
+    gl_Position = vec4(vPos, 1);
 }

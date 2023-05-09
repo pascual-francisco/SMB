@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 Piranha::Piranha(float x, float y)

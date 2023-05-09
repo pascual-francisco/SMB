@@ -1,5 +1,4 @@
-#pragma once
-#include "stdafx.h"
+#include "Goomba.h"
 
 Goomba::Goomba(float x, float y)
 {

@@ -1,9 +1,7 @@
-#pragma once
 #include "stdafx.h"
 
-World11::World11(GLuint id, GLuint pro):Scene()
+World11::World11(GLuint id, GLuint pro):Scene(id, pro)
 {
-	programID = pro;
 	initObjects();
 	initBackground();
 	initForeground();
@@ -19,13 +17,20 @@ void World11::initObjects()
 	ptrObjects = new ObjectManager(programID, GL_TRIANGLES);
 	ptrObjects->entitiesArray.push_back(new Mario(3 * 16 , 14 * 16));
 	ptrObjects->initDataArray();
+
+
+
+
 }
 
 void World11::initBackground()
 {
-	ptrBackground = new TileMapManager(1 * 14 * 16, 14 * 16, WORLD11MAPDATA,  viewPort.w, viewPort.h, 16, 16, 1, programID, GL_TRIANGLES);
-	ptrBackground->loadPage(0, 0, 0, 0);
-	ptrBackground->printTiles();
+	ptrBackground = new TileMapManager(1 * 14 * 16, 14 * 16, WORLD11MAPDATA, viewPort.w, viewPort.h, 16, 16, 1, 1, programID, GL_TRIANGLES);
+	//ptrBackground->loadFirstPage();
+	ptrBackground->loadSecondPage();
+	//ptrBackground->loadThirdPage();
+	//ptrBackground->loadFourthPage();
+
 }
 
 void World11::initForeground()
@@ -36,12 +41,6 @@ void World11::initForeground()
 void World11::updateObjects()
 {
 
-	for (int i = 0; i < 4; i++)
-	{
-		//ptrObjects->entitiesArray[i]->mechanics.position.x += ptrBackground->speedX;
-		//ptrObjects->entitiesArray[i]->mechanics.position.y += ptrBackground->speedY;
-
-	}
 
 }
 

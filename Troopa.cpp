@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 Troopa::Troopa(float x, float y)

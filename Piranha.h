@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 #ifndef PIRANHA_H
@@ -6,7 +5,7 @@
 
 class Piranha :public Entity
 {
-	public:	
+	public:
 
 #ifndef PIRANHAIDLE_H
 #define	PIRANHAIDLE_H

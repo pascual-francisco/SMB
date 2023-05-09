@@ -1,4 +1,3 @@
-#pragma once
 #include "stdafx.h"
 
 enum SCENES_NAME
@@ -40,12 +39,7 @@ enum SCENES_NAME
 
 enum TESTURES_NAME
 {
-	MARIO,
-	GOOMBA,
-	PIRANHA,
-	TROOPA,
-	PALETTE_0 = 0,
-	PALETTE_1,
+	PALETTE_1 = 1,
 	PALETTE_2,
 	PALETTE_3,
 	PALETTE_4,
@@ -53,5 +47,6 @@ enum TESTURES_NAME
 	PALETTE_6,
 	PALETTE_7,
 	PALETTE_8,
-	PALETTE_9
+	PALETTE_9,
+	PALETTE_10
 };

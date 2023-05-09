@@ -1,15 +1,15 @@
-#pragma once
 #include "stdafx.h"
 
-SuperMarioBros::SuperMarioBros(bool mode, string file, GLuint x, GLuint y, GLuint w, GLuint h) :Game(mode, file, x, y, w, h)
+SuperMarioBros::SuperMarioBros(bool mode, string file, GLuint sh, GLuint x, GLuint y, GLuint w, GLuint h) :Game(mode, file, sh, x, y, w, h)
 {
 	actualScene = 0;
 	initUniforms();
 	initTextures();
 	initBuffers();
-	initScenes();
 	initSounds();
-	update();
+	initScenes();
+   update();
+//this->ptrRenderer->shaders[0]->print();
 }
 
 SuperMarioBros::~SuperMarioBros()
@@ -27,16 +27,19 @@ void SuperMarioBros::initScenes()
 void SuperMarioBros::initTextures()
 {
 	ptrTextureManager = new TextureManager();
-	ptrTextureManager->initTexture(PALETTE_0, "Assets/Textures/palette_0_", 5, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(PALETTE_1, "Assets/Textures/palette_1_", 4, GL_TEXTURE_2D_ARRAY);
+	ptrTextureManager->initTexture(PALETTE_1, "Assets/Textures/palette_1_", 5, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PALETTE_2, "Assets/Textures/palette_2_", 4, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PALETTE_3, "Assets/Textures/palette_3_", 4, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PALETTE_4, "Assets/Textures/palette_4_", 4, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PALETTE_5, "Assets/Textures/palette_5_", 4, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PALETTE_6, "Assets/Textures/palette_6_", 4, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(PALETTE_7, "Assets/Textures/palette_7_", 11, GL_TEXTURE_2D_ARRAY);
-	ptrTextureManager->initTexture(PALETTE_8, "Assets/Textures/palette_8_", 1, GL_TEXTURE_2D_ARRAY);
+	ptrTextureManager->initTexture(PALETTE_7, "Assets/Textures/palette_7_", 4, GL_TEXTURE_2D_ARRAY);
+	ptrTextureManager->initTexture(PALETTE_8, "Assets/Textures/palette_8_", 11, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PALETTE_9, "Assets/Textures/palette_9_", 1, GL_TEXTURE_2D_ARRAY);
+	ptrTextureManager->initTexture(PALETTE_10, "Assets/Textures/palette_10_", 1, GL_TEXTURE_2D_ARRAY);
+
+
+
 }
 
 void SuperMarioBros::initSounds()
@@ -54,6 +57,7 @@ void SuperMarioBros::initSounds()
 	ptrSoundManager->initBGM(9, "Assets/Audio/BGM/12 - World Clear.mp3");
 	ptrSoundManager->initBGM(10, "Assets/Audio/BGM/13 - Ending.mp3");
 	ptrSoundManager->initBGM(11, "Assets/Audio/BGM/13 - Ending.mp3");
+
 }
 
 void SuperMarioBros::initUniforms()
@@ -66,7 +70,7 @@ void SuperMarioBros::initBuffers()
 
 void SuperMarioBros::update()
 {
-	while (active)
+	while(active)
 	{
 		updateScene();
 		updateUniforms();

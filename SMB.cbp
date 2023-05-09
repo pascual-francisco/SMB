@@ -8,6 +8,7 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/SMB" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="/home/francis/Documents/Code Blocks/SMB" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -17,8 +18,9 @@
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/SMB" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="/home/francis/Documents/Code Blocks/SMB" />
 				<Option object_output="obj/Release/" />
-				<Option type="1" />
+				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
@@ -30,30 +32,22 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c11" />
 			<Add option="-fexceptions" />
-			<Add directory="D:/Code Blocks/GamLib 6.0" />
-			<Add directory="D:/glew-2.1.0/include/GL" />
-			<Add directory="D:/glm-master/glm" />
-			<Add directory="../../SDL2_image-2.0.0/x86_64-w64-mingw32/include/SDL2" />
-			<Add directory="D:/SDL2_mixer-2.0.0/x86_64-w64-mingw32/include/SDL2" />
-			<Add directory="D:/SDL2-2.26.5/x86_64-w64-mingw32/include/SDL2" />
+			<Add directory="/home/francis/Documents/Code Blocks/GamLib" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32" />
-			<Add option="-lSDL2main" />
-			<Add option="-lSDL2" />
-			<Add option="-lSDL2_image" />
-			<Add option="-lSDL2_mixer" />
-			<Add option="-lopengl32" />
-			<Add option="-lglu32" />
-			<Add option="-lglew32" />
-			<Add option="-lglew32s" />
-			<Add library="D:/Code Blocks/GamLib 6.0/bin/Debug/libGamLib 6.a" />
-			<Add directory="D:/Code Blocks/GamLib 6.0/bin/Debug" />
-			<Add directory="D:/glew-2.1.0/lib/Release/x64" />
-			<Add directory="D:/SDL2_image-2.0.0/x86_64-w64-mingw32/lib" />
-			<Add directory="D:/SDL2_mixer-2.0.0/x86_64-w64-mingw32/lib" />
-			<Add directory="D:/SDL2-2.26.5/x86_64-w64-mingw32/lib" />
+			<Add library="GL" />
+			<Add library="X11" />
+			<Add library="SDL2" />
+			<Add library="SDL2_image" />
+			<Add library="SDL2_mixer" />
+			<Add library="GLU" />
+			<Add library="SDL2_ttf" />
+			<Add library="GLEW" />
+			<Add library="glut" />
+			<Add library="/home/francis/Documents/Code Blocks/GamLib/bin/Release/libGamLib.so" />
+			<Add library="OpenGL" />
 		</Linker>
 		<Unit filename="Assets/Shaders/Rendererlog.txt" />
 		<Unit filename="Assets/Shaders/shaderlog.txt" />

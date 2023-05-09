@@ -1,7 +1,6 @@
 #pragma once
 
 //Standard Libraries
-#include <windows.h>
 #include <list>
 #include <map>
 #include <stack>
@@ -16,21 +15,17 @@
 #include <typeinfo>
 using namespace std;
 
-//Libraries
-#include <SDL.h>
-#include <SDL_image.h>
-#include <SDL_mixer.h>
-#include <SDL_events.h>
-#include <glew.h>
-#include <gl/GL.h>
-#include <gl/GLU.h>
-#include <glm.hpp>
-#include <gtc/matrix_transform.hpp>
+//Libraries//
+#include <GL/glew.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
+#include <GL/freeglut.h>
+#include <GL/glu.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 using namespace glm;
 
-
-#include "TimerDelegate.h"
-#include "Timer.h"
 #include "TrackAction.h"
 #include "KeyFrameDelegate.h"
 #include "KeyFrame.h"
@@ -47,11 +42,10 @@ using namespace glm;
 #include "Mechanics.h"
 #include "FSMState.h"
 #include "GraphicElement.h"
-#include "HitBox.h"
 #include "Sprite.h"
 
-#include "GameObject.h"
 #include "Entity.h"
+#include "GameObject.h"
 
 #include "BufferObject.h"
 #include "RenderBuffer.h"
@@ -75,7 +69,6 @@ using namespace glm;
 #include "Renderer.h"
 #include "Game.h"
 #include "EventManager.h"
-#include "GamLib.h"
 
 //Super Mario Bros Headers
 #include "Globals.h"

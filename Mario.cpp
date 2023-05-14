@@ -21,7 +21,7 @@ Mario::Mario(float x, float y)
 	jumpButton = false;
 	fireButton = false;
 
-	sprite.push_back(new Sprite(PALETTE_1));
+	sprite.push_back(new Sprite(PALETTE_8, 1));
 
 	sprite[0]->transformation.pivot.x = 7.0f;
 	mechanics.position.x = x;
@@ -39,8 +39,6 @@ Mario::Mario(float x, float y)
 
 	brain.push(marioIdle);
 	brain.top()->enter();
-
-
 }
 
 Mario::~Mario()
@@ -54,40 +52,66 @@ Mario::~Mario()
 
 void Mario::update()
 {
-	sprite[0]->transformation.rotate.y = direction;
+   sprite[0]->transformation.rotate.y = direction;
 
-
-	if (!leftButton && !rightButton)
-		mechanics.speed.x = 0.0f;
-
-	if (!upButton && !downButton)
-		mechanics.speed.y = 0.0f;
-
-	if (leftButton)
+	if( mechanics.position.x < 256)
 	{
-		direction = M_PI;
-		mechanics.speed.x = -1.0f;
-
-		if (fireButton)
-			mechanics.speed.x = -2.0f;
+      mechanics.position.x++;
+	}
+	else
+	{
+	   mechanics.position.x = 0;
 	}
 
-	if (rightButton)
-	{
-		direction = 0.0f;
-		mechanics.speed.x = 1.0f;
+//////
+// GLint pageDimensionX = 0;
+//   GLint pageDimensionY = 0;
+//	glBindTexture(GL_TEXTURE_2D_ARRAY, sprite->texturePalette);
+//	glGetTexLevelParameteriv(GL_TEXTURE_2D_ARRAY, 0, GL_TEXTURE_WIDTH, &pageDimensionX);
+//	glGetTexLevelParameteriv(GL_TEXTURE_2D_ARRAY, 0, GL_TEXTURE_HEIGHT, &pageDimensionY);
+//	glBindTexture(GL_TEXTURE_2D_ARRAY, 0);
+//
+//  	GLfloat textureX = ( (sprite->tilePosition.x * sprite->tileDimension.x) + (1 *  sprite->tilePosition.x) ) / pageDimensionX;
+//	GLfloat textureY = ( (sprite->tilePosition.y * sprite->tileDimension.y) + (1 *  sprite->tilePosition.y) ) / pageDimensionY;
+//	GLfloat textureW = sprite->tileDimension.x / pageDimensionX;
+//	GLfloat textureH = sprite->tileDimension.y / pageDimensionY;
+////
+//	if(sprite->ptrAnimation != nullptr)
+//	{
+//		textureX = ( ( (sprite->tilePosition.x + sprite->ptrAnimation->actualFrame) *  sprite->tileDimension.x ) + (1 *  sprite->tilePosition.x) ) / pageDimensionX;
+//	}
 
-		if (fireButton)
-			mechanics.speed.x = 2.0f;
-	}
-
-	if (upButton)
-		mechanics.speed.y = 1.0f;
-
-	if (downButton)
-		mechanics.speed.y = -1.0f;
-
-	brain.top()->update();
+//	if (!leftButton && !rightButton)
+//		mechanics.speed.x = 0.0f;
+//
+//	if (!upButton && !downButton)
+//		mechanics.speed.y = 0.0f;
+//
+//	if (leftButton)
+//	{
+//		direction = M_PI;
+//		mechanics.speed.x = -1.0f;
+//
+//		if (fireButton)
+//			mechanics.speed.x = -2.0f;
+//	}
+//
+//	if (rightButton)
+//	{
+//		direction = 0.0f;
+//		mechanics.speed.x = 1.0f;
+//
+//		if (fireButton)
+//			mechanics.speed.x = 2.0f;
+//	}
+//
+//	if (upButton)
+//		mechanics.speed.y = 1.0f;
+//
+//	if (downButton)
+//		mechanics.speed.y = -1.0f;
+//
+//	brain.top()->update();
 }
 
 void Mario::print() const

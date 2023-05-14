@@ -6,7 +6,7 @@ Piranha::Piranha(float x, float y)
 	healthPoints = 1;
 	attackDamage = 1;
 
-//	sprite.push_back(new Sprite(PIRANHA, 0, 1, 0, 5.0f, Sprite::AnimationStates::LOOP_FORWARD));
+   sprite.push_back(new Sprite(PALETTE_1));
 	mechanics.position.x = x;
 	mechanics.position.y = y;
 

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-SuperMarioBros::SuperMarioBros(bool mode, string file, GLuint sh, GLuint x, GLuint y, GLuint w, GLuint h) :Game(mode, file, sh, x, y, w, h)
+SuperMarioBros::SuperMarioBros(bool mode, string file, GLuint x, GLuint y, GLuint w, GLuint h) :Game(mode, file, x, y, w, h)
 {
 	actualScene = 0;
 	initUniforms();
@@ -8,8 +8,8 @@ SuperMarioBros::SuperMarioBros(bool mode, string file, GLuint sh, GLuint x, GLui
 	initBuffers();
 	initSounds();
 	initScenes();
+	actualScene = 1;
    update();
-//this->ptrRenderer->shaders[0]->print();
 }
 
 SuperMarioBros::~SuperMarioBros()
@@ -20,8 +20,19 @@ SuperMarioBros::~SuperMarioBros()
 
 void SuperMarioBros::initScenes()
 {
-	scenes.push_back(new World11(INTRO, ptrRenderer->ptrShaders[0]->programID));
-
+   scenes.push_back(new World11(INTRO, ptrRenderer->shaders[0]->programID));
+   scenes.push_back(new World11(WORLD11, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD12, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD13, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD14, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD21, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD22, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD23, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD24, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD31, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD32, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD33, ptrRenderer->shaders[0]->programID));
+//   scenes.push_back(new World11(WORLD34, ptrRenderer->shaders[0]->programID));
 }
 
 void SuperMarioBros::initTextures()
@@ -37,35 +48,52 @@ void SuperMarioBros::initTextures()
 	ptrTextureManager->initTexture(PALETTE_8, "Assets/Textures/palette_8_", 11, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PALETTE_9, "Assets/Textures/palette_9_", 1, GL_TEXTURE_2D_ARRAY);
 	ptrTextureManager->initTexture(PALETTE_10, "Assets/Textures/palette_10_", 1, GL_TEXTURE_2D_ARRAY);
-
-
-
 }
 
 void SuperMarioBros::initSounds()
 {
 	ptrSoundManager = new SoundManager();
-	ptrSoundManager->initBGM(0, "Assets/Audio/BGM/01 - Super Mario Bros.mp3");
-	ptrSoundManager->initBGM(1, "Assets/Audio/BGM/02 - Invincibility Star.mp3");
-	ptrSoundManager->initBGM(2, "Assets/Audio/BGM/03 - Hurry - Super Mario Bros.mp3");
-	ptrSoundManager->initBGM(3, "Assets/Audio/BGM/04 - Area Clear.mp3");
-	ptrSoundManager->initBGM(4, "Assets/Audio/BGM/05 - Warp Pipe.mp3");
-	ptrSoundManager->initBGM(5, "Assets/Audio/BGM/06 - Underground.mp3");
-	ptrSoundManager->initBGM(6, "Assets/Audio/BGM/08 - Water World.mp3");
-	ptrSoundManager->initBGM(7, "Assets/Audio/BGM/09 - Hurry - Water World.mp3");
-	ptrSoundManager->initBGM(8, "Assets/Audio/BGM/11 - Hurry - Castle.mp3");
-	ptrSoundManager->initBGM(9, "Assets/Audio/BGM/12 - World Clear.mp3");
-	ptrSoundManager->initBGM(10, "Assets/Audio/BGM/13 - Ending.mp3");
-	ptrSoundManager->initBGM(11, "Assets/Audio/BGM/13 - Ending.mp3");
-
+	ptrSoundManager->initBGM(0, "Assets/BGM/01 - Super Mario Bros.mp3");
+	ptrSoundManager->initBGM(1, "Assets/BGM/02 - Invincibility Star.mp3");
+	ptrSoundManager->initBGM(2, "Assets/BGM/03 - Hurry - Super Mario Bros.mp3");
+	ptrSoundManager->initBGM(3, "Assets/BGM/04 - Area Clear.mp3");
+	ptrSoundManager->initBGM(4, "Assets/BGM/05 - Warp Pipe.mp3");
+	ptrSoundManager->initBGM(5, "Assets/BGM/06 - Underground.mp3");
+	ptrSoundManager->initBGM(6, "Assets/BGM/08 - Water World.mp3");
+	ptrSoundManager->initBGM(7, "Assets/BGM/09 - Hurry - Water World.mp3");
+	ptrSoundManager->initBGM(8, "Assets/BGM/11 - Hurry - Castle.mp3");
+	ptrSoundManager->initBGM(9, "Assets/BGM/12 - World Clear.mp3");
+	ptrSoundManager->initBGM(10, "Assets/BGM/13 - Ending.mp3");
+	ptrSoundManager->initBGM(11, "Assets/BGM/13 - Ending.mp3");
+	ptrSoundManager->initSFX(13, "Assets/SFX/Beep.wav");
+	ptrSoundManager->initSFX(14, "Assets/SFX/Big Jump.wav");
+	ptrSoundManager->initSFX(15, "Assets/SFX/Bowser Die.wav");
+	ptrSoundManager->initSFX(16, "Assets/SFX/Break.wav");
+	ptrSoundManager->initSFX(17, "Assets/SFX/Bump.wav");
+	ptrSoundManager->initSFX(18, "Assets/SFX/Coin.wav");
+	ptrSoundManager->initSFX(19, "Assets/SFX/Die.wav");
+	ptrSoundManager->initSFX(20, "Assets/SFX/Enemy Fire.wav");
+	ptrSoundManager->initSFX(21, "Assets/SFX/Flagpole.wav");
+	ptrSoundManager->initSFX(22, "Assets/SFX/Game Over.wav");
+	ptrSoundManager->initSFX(23, "Assets/SFX/Item.wav");
+	ptrSoundManager->initSFX(24, "Assets/SFX/Jump.wav");
+	ptrSoundManager->initSFX(25, "Assets/SFX/Kick.wav");
+	ptrSoundManager->initSFX(26, "Assets/SFX/Powerup.wav");
+	ptrSoundManager->initSFX(27, "Assets/SFX/Skid.wav");
+	ptrSoundManager->initSFX(28, "Assets/SFX/Squish.wav");
+	ptrSoundManager->initSFX(29, "Assets/SFX/Thwomp.wav");
+	ptrSoundManager->initSFX(30, "Assets/SFX/Vine.wav");
+   ptrSoundManager->initSFX(31, "Assets/SFX/Warp.wav");
 }
 
 void SuperMarioBros::initUniforms()
 {
+
 }
 
 void SuperMarioBros::initBuffers()
 {
+
 }
 
 void SuperMarioBros::update()
@@ -95,6 +123,7 @@ void SuperMarioBros::updateUniforms()
 
 void SuperMarioBros::updateTextures()
 {
+
 }
 
 void SuperMarioBros::updateSounds()
@@ -104,6 +133,7 @@ void SuperMarioBros::updateSounds()
 
 void SuperMarioBros::updateBuffers()
 {
+
 }
 
 void SuperMarioBros::checkEvents()

@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------------------------------------------------
-Renderer Log: Tue Jun 27 23:03:34 2023
+Renderer Log: Sun May 21 16:54:42 2023
 SDL initialized no error
 SDL_Image initialized no error
 OpenGL context created no error

@@ -1,6 +1,6 @@
-#include "stdafx.h"
+#include "SuperMarioBros.h"
 
-SuperMarioBros::SuperMarioBros(bool mode, string file, GLuint x, GLuint y, GLuint w, GLuint h) :Game(mode, file, x, y, w, h)
+SuperMarioBros::SuperMarioBros(string name, bool mode, string file, GLuint w, GLuint h) :Game(name, mode, file, w, h)
 {
 	actualScene = 0;
 	initUniforms();
@@ -8,7 +8,6 @@ SuperMarioBros::SuperMarioBros(bool mode, string file, GLuint x, GLuint y, GLuin
 	initBuffers();
 	initSounds();
 	initScenes();
-	actualScene = 1;
    update();
 }
 
@@ -20,7 +19,7 @@ SuperMarioBros::~SuperMarioBros()
 
 void SuperMarioBros::initScenes()
 {
-   scenes.push_back(new World11(INTRO, ptrRenderer->shaders[0]->programID));
+   scenes.push_back(new World11(WORLD11, ptrRenderer->shaders[0]->programID));
    scenes.push_back(new World11(WORLD11, ptrRenderer->shaders[0]->programID));
 //   scenes.push_back(new World11(WORLD12, ptrRenderer->shaders[0]->programID));
 //   scenes.push_back(new World11(WORLD13, ptrRenderer->shaders[0]->programID));
@@ -33,6 +32,8 @@ void SuperMarioBros::initScenes()
 //   scenes.push_back(new World11(WORLD32, ptrRenderer->shaders[0]->programID));
 //   scenes.push_back(new World11(WORLD33, ptrRenderer->shaders[0]->programID));
 //   scenes.push_back(new World11(WORLD34, ptrRenderer->shaders[0]->programID));
+
+
 }
 
 void SuperMarioBros::initTextures()
@@ -88,6 +89,55 @@ void SuperMarioBros::initSounds()
 
 void SuperMarioBros::initUniforms()
 {
+//   //Init Camera//
+//   ptrCamera = new Camera(true, 0, 0.0f, ptrRenderer->viewPort.w, 0.0f, ptrRenderer->viewPort.h);
+//   glViewport(0, 0, ptrRenderer->viewPort.w * ptrRenderer->zoomFactor, ptrRenderer->viewPort.h * ptrRenderer->zoomFactor);
+//
+//
+//
+//   //Init Samplers//
+//	GLint maxTextureUnits = 0;
+//	glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS, &maxTextureUnits);
+//
+//   int samplers[maxTextureUnits];
+//	for (uint i = 0; i < maxTextureUnits; i++)
+//      samplers[i] = i;
+//
+//   glUniform1iv(glGetUniformLocation(ptrRenderer->shaders[0]->programID, "fSamplers"), maxTextureUnits, samplers);
+//	glUniform1i(glGetUniformLocation(ptrRenderer->shaders[0]->programID, "fTextures"), maxTextureUnits);
+//   glUniformMatrix4fv(glGetUniformLocation(ptrRenderer->shaders[0]->programID, "mProjectionMatrix"), 1, GL_FALSE, &ptrCamera->mProjection[0][0]);
+//	glUniformMatrix4fv(glGetUniformLocation(ptrRenderer->shaders[0]->programID, "mViewMatrix"), 1, GL_FALSE, &ptrCamera->mView[0][0]);
+
+
+   mat4  projection;
+   mat4  view;
+
+	projection = mat4(1.0f);
+	view = mat4(1.0f);
+
+	//Init Samplers
+	int samplers[32];
+	for (uint i = 0; i < 32; i++)
+		samplers[i] = i;
+
+	glUniform1iv(glGetUniformLocation(ptrRenderer->shaders[0]->programID, "fSamplers"), 32, samplers);
+
+	//Init Matrices to 1
+	projection = mat4(1.0f);
+	view = mat4(1.0f);
+
+	//Init Projection
+	projection = glm::ortho(0.0f, 1.0f * 256.0f, 0.0f, 1.0f * 240.0f, 1000.0f, -1000.0f);
+
+	//Init Camera
+	view = glm::lookAt(vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 0.0f, -1.0f), vec3(0.0f, 1.0f, 0.0f));
+
+	//Init Origin
+	view = glm::translate(view, vec3(0.0f, 0.0f, 0.0f));
+
+	glUniformMatrix4fv(glGetUniformLocation(ptrRenderer->shaders[0]->programID, "vProjection"), 1, GL_FALSE, &projection[0][0]);
+	glUniformMatrix4fv(glGetUniformLocation(ptrRenderer->shaders[0]->programID, "vView"), 1, GL_FALSE, &view[0][0]);
+
 
 }
 
@@ -107,6 +157,7 @@ void SuperMarioBros::update()
 		updateSounds();
 		checkEvents();
 		ptrRenderer->update();
+
 	}
 }
 
@@ -114,6 +165,9 @@ void SuperMarioBros::updateScene()
 {
 	if (scenes[actualScene] != nullptr)
 		scenes[actualScene]->update();
+
+
+
 }
 
 void SuperMarioBros::updateUniforms()
@@ -147,30 +201,28 @@ void SuperMarioBros::checkEvents()
 			switch (gameEvents.key.keysym.sym)
 			{
 			case SDLK_a:
-				leftButton = true;
+				Game::leftButton = true;
+					scenes[actualScene]->ptrObjectManager->entitiesArray[0];
 
 				break;
 
 			case SDLK_d:
-				rightButton = true;
+				Game::rightButton = true;
 
 				break;
 
 			case SDLK_w:
-
-				upButton = true;
+				Game::upButton = true;
 
 				break;
 
 			case SDLK_s:
-				downButton = true;
+				Game::downButton = true;
 
 
 				break;
 
 			case SDLK_x:
-
-
 
 				break;
 
@@ -183,12 +235,12 @@ void SuperMarioBros::checkEvents()
 				break;
 
 			case SDLK_k:
-				bButton = true;
+				Game::bButton = true;
 
 				break;
 
 			case SDLK_l:
-				aButton = true;
+				Game::aButton = true;
 
 
 				break;
@@ -226,50 +278,51 @@ void SuperMarioBros::checkEvents()
 			switch (gameEvents.key.keysym.sym)
 			{
 			case SDLK_a:
-				leftButton = false;
+				Game::leftButton = false;
 
 				break;
 
 			case SDLK_d:
-				rightButton = false;
+				Game::rightButton = false;
 
 				break;
 
 			case SDLK_w:
-				upButton = false;
+				Game::upButton = false;
 
 				break;
 
 			case SDLK_s:
-				downButton = false;
+				Game::downButton = false;
 
 				break;
 
 			case SDLK_k:
-				bButton = false;
+				Game::bButton = false;
 
 				break;
 
 			case SDLK_l:
-				aButton = false;
-
-				break;
-
-			case SDLK_RIGHT:
+				Game::aButton = false;
 
 				break;
 
 			case SDLK_LEFT:
-
+				scenes[actualScene]->ptrBackground->speedX = 1.0f;
+				scenes[actualScene]->ptrBackground->printVertexArray();
 				break;
 
-			case SDLK_UP:
+			case SDLK_RIGHT:
+				scenes[actualScene]->ptrBackground->speedX = -1.0f;
+				break;
 
+
+			case SDLK_UP:
+				scenes[actualScene]->ptrBackground->speedY = -1.0f;
 				break;
 
 			case SDLK_DOWN:
-
-				break;
+				scenes[actualScene]->ptrBackground->speedY = 1.0f;
 
 			case SDLK_z:
 

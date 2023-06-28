@@ -1,7 +1,4 @@
-#version 440
-
-uniform mat4 mProjectionMatrix;
-uniform mat4 mViewMatrix;
+#version 450
 
 layout (location = 0) in vec3 vPos;
 layout (location = 1) in vec4 vTex;
@@ -9,6 +6,9 @@ layout (location = 2) in vec4 vCol;
 layout (location = 3) in vec3 vTra;
 layout (location = 4) in vec3 vSca;
 layout (location = 5) in vec3 vRot;
+
+uniform mat4 vProjection;
+uniform mat4 vView;
 
 out vec4 vColor;
 out vec4 vTexture;
@@ -18,13 +18,12 @@ void main()
    vColor = vCol;
    vTexture = vTex;
 
-   vec4 vScale = vec4(vSca.x * vPos.x, vSca.y * vPos.y, vSca.z * vPos.z, 1.0);
-   vec4 vTranslate = vec4(vTra.x + vPos.x, vTra.y + vPos.y, vTra.z + vPos.z, 1.0);
    vec4 vRotateX = vec4(vPos.x, cos(vRot.y) - sin(vRot.z), sin(vRot.y) + cos(vRot.z), 1.0);
    vec4 vRotateY = vec4(cos(vRot.x) + sin(vRot.z), vPos.y, -sin(vRot.x) + cos(vRot.z), 1.0);
    vec4 vRotateZ = vec4(cos(vPos.x) - sin(vRot.y), sin(vRot.x) + cos(vRot.y), vPos.z, 1.0);
 
+   vec4 vResult = vec4( (vPos.x * vSca.x) + vTra.x, (vPos.y * vSca.y) + vTra.y, (vPos.z * vSca.z) + vTra.z, 1.0f);
 
-    gl_Position = mProjectionMatrix * mViewMatrix *  vScale * vRotateX * vRotateY * vRotateZ * vTranslate;
+  gl_Position =  vView * vProjection * vec4( (vPos.x * vSca.x) + vTra.x, (vPos.y * vSca.y) + vTra.y, (vPos.z * vSca.z) + vTra.z, 1.0f);
 }
 

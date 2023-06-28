@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "Piranha.h"
 
 Piranha::Piranha(float x, float y)
 {

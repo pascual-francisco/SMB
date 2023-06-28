@@ -6,7 +6,7 @@
 class SuperMarioBros: public Game
 {
 	public:
-	SuperMarioBros(bool mode, string file, GLuint x, GLuint y, GLuint w, GLuint h);
+	SuperMarioBros(string name, bool mode, string file, GLuint w, GLuint h);
 	~SuperMarioBros();
 
 	void initScenes();

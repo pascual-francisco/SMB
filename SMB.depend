@@ -5,7 +5,7 @@
 1682886354 /home/francis/Documents/Code Blocks/SMB/Goomba.h
 	"stdafx.h"
 
-1683404848 /home/francis/Documents/Code Blocks/SMB/stdafx.h
+1686884316 /home/francis/Documents/Code Blocks/SMB/stdafx.h
 	<list>
 	<map>
 	<stack>
@@ -26,45 +26,7 @@
 	<GL/glu.h>
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
-	"TrackAction.h"
-	"KeyFrameDelegate.h"
-	"KeyFrame.h"
-	"TrackDelegate.h"
-	"Track.h"
-	"EntityDelegate.h"
-	"SpriteDelegate.h"
-	"SoundDelegate.h"
-	"Texture.h"
-	"TextureManager.h"
-	"Transformation.h"
-	"Mechanics.h"
-	"FSMState.h"
-	"GraphicElement.h"
-	"Sprite.h"
-	"Entity.h"
-	"GameObject.h"
-	"BufferObject.h"
-	"RenderBuffer.h"
-	"PixelBuffer.h"
-	"PackBuffer.h"
-	"UnpackBuffer.h"
-	"FeedbackBuffer.h"
-	"TextureBuffer.h"
-	"FrameBuffer.h"
-	"Shader.h"
-	"VertexBufferLayout.h"
-	"VertexArray.h"
-	"VertexBuffer.h"
-	"UniformBuffer.h"
-	"IndexBuffer.h"
-	"TileMapManager.h"
-	"ObjectManager.h"
-	"SoundManager.h"
-	"Camera.h"
-	"Scene.h"
-	"Renderer.h"
-	"Game.h"
-	"EventManager.h"
+	"GamLib.h"
 	"Globals.h"
 	"Mario.h"
 	"Goomba.h"
@@ -171,7 +133,7 @@
 1683158995 /home/francis/Documents/Code Blocks/GamLib/FSMState.h
 	"stdafx.h"
 
-1684015231 /home/francis/Documents/Code Blocks/GamLib/GraphicElement.h
+1684706716 /home/francis/Documents/Code Blocks/GamLib/GraphicElement.h
 	"stdafx.h"
 
 1682884422 /home/francis/Documents/Code Blocks/GamLib/Animation.h
@@ -227,7 +189,7 @@
 1683159553 /home/francis/Documents/Code Blocks/GamLib/IndexBuffer.h
 	"stdafx.h"
 
-1682884344 /home/francis/Documents/Code Blocks/GamLib/TileMapManager.h
+1684621392 /home/francis/Documents/Code Blocks/GamLib/TileMapManager.h
 	"stdafx.h"
 
 1683159091 /home/francis/Documents/Code Blocks/GamLib/ObjectManager.h
@@ -236,22 +198,22 @@
 1682884329 /home/francis/Documents/Code Blocks/GamLib/SoundManager.h
 	"stdafx.h"
 
-1683857839 /home/francis/Documents/Code Blocks/GamLib/Camera.h
+1685582702 /home/francis/Documents/Code Blocks/GamLib/Camera.h
 	"stdafx.h"
 
-1683764822 /home/francis/Documents/Code Blocks/GamLib/Scene.h
+1684544740 /home/francis/Documents/Code Blocks/GamLib/Scene.h
 	"stdafx.h"
 
-1683671283 /home/francis/Documents/Code Blocks/GamLib/Renderer.h
+1687551102 /home/francis/Documents/Code Blocks/GamLib/Renderer.h
 	"stdafx.h"
 
-1683671328 /home/francis/Documents/Code Blocks/GamLib/Game.h
+1687551181 /home/francis/Documents/Code Blocks/GamLib/Game.h
 	"stdafx.h"
 
 1683158957 /home/francis/Documents/Code Blocks/GamLib/EventManager.h
 	"stdafx.h"
 
-1683857600 /home/francis/Documents/Code Blocks/SMB/Globals.h
+1685586706 /home/francis/Documents/Code Blocks/SMB/Globals.h
 	"stdafx.h"
 
 1682884668 /home/francis/Documents/Code Blocks/SMB/Mario.h
@@ -263,30 +225,33 @@
 1682884671 /home/francis/Documents/Code Blocks/SMB/Piranha.h
 	"stdafx.h"
 
-1683511721 /home/francis/Documents/Code Blocks/SMB/World11Map.h
+1684896587 /home/francis/Documents/Code Blocks/SMB/World11Map.h
 	"stdafx.h"
 
 1682884679 /home/francis/Documents/Code Blocks/SMB/World11.h
 	"stdafx.h"
 
-1683672336 /home/francis/Documents/Code Blocks/SMB/SuperMarioBros.h
+1684984437 /home/francis/Documents/Code Blocks/SMB/SuperMarioBros.h
 	"stdafx.h"
 
-1683676466 source:/home/francis/Documents/Code Blocks/SMB/main.cpp
+1684984603 source:/home/francis/Documents/Code Blocks/SMB/main.cpp
 	"stdafx.h"
 
-1684017376 source:/home/francis/Documents/Code Blocks/SMB/Mario.cpp
-	"stdafx.h"
+1687490911 source:/home/francis/Documents/Code Blocks/SMB/Mario.cpp
+	"Mario.h"
 
-1683683840 source:/home/francis/Documents/Code Blocks/SMB/Piranha.cpp
-	"stdafx.h"
+1686883358 source:/home/francis/Documents/Code Blocks/SMB/Piranha.cpp
+	"Piranha.h"
 
-1683683526 source:/home/francis/Documents/Code Blocks/SMB/Super Mario Bros.cpp
-	"stdafx.h"
+1687491859 source:/home/francis/Documents/Code Blocks/SMB/Super Mario Bros.cpp
+	"SuperMarioBros.h"
 
-1683683840 source:/home/francis/Documents/Code Blocks/SMB/Troopa.cpp
-	"stdafx.h"
+1686883315 source:/home/francis/Documents/Code Blocks/SMB/Troopa.cpp
+	"Troopa.h"
 
-1683772699 source:/home/francis/Documents/Code Blocks/SMB/World11.cpp
+1687491818 source:/home/francis/Documents/Code Blocks/SMB/World11.cpp
+	"World11.h"
+
+1686876192 /home/francis/Documents/Code Blocks/GamLib/GamLib.h
 	"stdafx.h"
 

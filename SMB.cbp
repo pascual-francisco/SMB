@@ -90,8 +90,8 @@
 		<Unit filename="Assets/SFX/Warp.wav" />
 		<Unit filename="Assets/Shaders/Rendererlog.txt" />
 		<Unit filename="Assets/Shaders/shaderlog.txt" />
+		<Unit filename="Assets/Shaders/texRect.fp" />
 		<Unit filename="Assets/Shaders/texRect.vp" />
-		<Unit filename="Assets/Shaders/textRect.fp" />
 		<Unit filename="Globals.h" />
 		<Unit filename="Goomba.cpp" />
 		<Unit filename="Goomba.h" />

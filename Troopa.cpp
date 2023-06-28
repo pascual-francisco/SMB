@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "Troopa.h"
 
 Troopa::Troopa(float x, float y)
 {

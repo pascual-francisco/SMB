@@ -1,6 +1,6 @@
 #pragma once
 
-//Standard Libraries
+//Standard Libraries//
 #include <list>
 #include <map>
 #include <stack>
@@ -24,51 +24,8 @@ using namespace std;
 #include <GL/glu.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include "GamLib.h"
 using namespace glm;
-
-#include "TrackAction.h"
-#include "KeyFrameDelegate.h"
-#include "KeyFrame.h"
-#include "TrackDelegate.h"
-#include "Track.h"
-
-#include "EntityDelegate.h"
-#include "SpriteDelegate.h"
-#include "SoundDelegate.h"
-
-#include "Texture.h"
-#include "TextureManager.h"
-#include "Transformation.h"
-#include "Mechanics.h"
-#include "FSMState.h"
-#include "GraphicElement.h"
-#include "Sprite.h"
-
-#include "Entity.h"
-#include "GameObject.h"
-
-#include "BufferObject.h"
-#include "RenderBuffer.h"
-#include "PixelBuffer.h"
-#include "PackBuffer.h"
-#include "UnpackBuffer.h"
-#include "FeedbackBuffer.h"
-#include "TextureBuffer.h"
-#include "FrameBuffer.h"
-#include "Shader.h"
-#include "VertexBufferLayout.h"
-#include "VertexArray.h"
-#include "VertexBuffer.h"
-#include "UniformBuffer.h"
-#include "IndexBuffer.h"
-#include "TileMapManager.h"
-#include "ObjectManager.h"
-#include "SoundManager.h"
-#include "Camera.h"
-#include "Scene.h"
-#include "Renderer.h"
-#include "Game.h"
-#include "EventManager.h"
 
 //Super Mario Bros Headers
 #include "Globals.h"

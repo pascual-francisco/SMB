@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "Mario.h"
 
 Mario::Mario(float x, float y)
 {
@@ -7,7 +7,7 @@ Mario::Mario(float x, float y)
 	attackDamage = 1;
 	direction = 0;
 
-    marioIdle = nullptr;
+   marioIdle = nullptr;
 	marioWalk = nullptr;
 	marioShoot = nullptr;
 	marioJump = nullptr;
@@ -21,9 +21,13 @@ Mario::Mario(float x, float y)
 	jumpButton = false;
 	fireButton = false;
 
-	sprite.push_back(new Sprite(PALETTE_8, 1));
+	sprite.push_back(new Sprite(PALETTE_8));
 
-	sprite[0]->transformation.pivot.x = 7.0f;
+   sprite[0]->tilePosition.x = 0.0f;
+	sprite[0]->tilePosition.y = 0.0f;
+	sprite[0]->tileDimension.x = 16.0f;
+	sprite[0]->tileDimension.y = 16.0f;
+
 	mechanics.position.x = x;
 	mechanics.position.y = y;
 	mechanics.maxSpeed.x = 1.5f;

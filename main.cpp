@@ -4,7 +4,7 @@ SuperMarioBros	*superMarioBros = nullptr;
 
 int main(int argc, char *argv[])
 {
-    superMarioBros = new SuperMarioBros(true, "Assets/Shaders/", 0, 0, 256, 224);
+    superMarioBros = new SuperMarioBros("Super Mario Bros", true, "Assets/Shaders/", 256, 224);
     return 0;
 }
 
